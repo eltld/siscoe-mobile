@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -44,6 +45,14 @@ public class MainActivity extends ActionBarActivity {
         adapter=new ObraAdapter(this.getApplicationContext(),0,listData);
         listViewObra.setAdapter(adapter);
 
+        listViewObra.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+              System.out.println("click :");
+
+            }
+        });
+
     }
 
     @Override
@@ -52,6 +61,8 @@ public class MainActivity extends ActionBarActivity {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
