@@ -1,14 +1,11 @@
 package com.siscoe.obra.ui;
 
-import android.app.Activity;
+import android.support.v4.app.Fragment;
 
 /**
- * Created by manuonda on 07/06/15.
+ * Created by manuonda on 09/06/15.
  */
-public class ObraDetalleActivity extends Activity {
+public class ObraDetalleActivity extends Fragment {
 
-
-
-
-
+    
 }

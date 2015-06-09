@@ -1,18 +1,19 @@
 package com.siscoe;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.siscoe.R;
 import com.siscoe.obra.Obra;
 import com.siscoe.obra.ObraAdapter;
+import com.siscoe.obra.ui.ObraTabActivity;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 
@@ -45,10 +46,13 @@ public class MainActivity extends ActionBarActivity {
         adapter=new ObraAdapter(this.getApplicationContext(),0,listData);
         listViewObra.setAdapter(adapter);
 
-        listViewObra.setOnClickListener(new View.OnClickListener() {
+
+        listViewObra.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onClick(View v) {
-              System.out.println("click :");
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                System.out.println("click :");
+                Intent intent = new Intent(getApplicationContext(), ObraTabActivity.class);
+                startActivity(intent);
 
             }
         });
